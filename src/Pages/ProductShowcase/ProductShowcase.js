@@ -1,8 +1,6 @@
-import React from 'react'
-import './Product.css'
+import React from "react";
+import "./ProductShowcase.css";
 
 export default function ProductShowcase() {
-  return (
-    <div>ProductShowcase</div>
-  )
+  return <div>ProductShowcase</div>;
 }

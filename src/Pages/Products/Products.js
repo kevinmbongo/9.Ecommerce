@@ -1,8 +1,6 @@
-import React from 'react'
-import './Product.css'
+import React from "react";
+import "./Products.css";
 
-export default function Product() {
-  return (
-    <div>Product</div>
-  )
+export default function Products() {
+  return <div>Product</div>;
 }
