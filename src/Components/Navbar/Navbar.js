@@ -1,8 +1,13 @@
-import React from 'react'
-import './Navbar.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <div>Navbar</div>
-  )
+    <nav className="nav-top">
+      <Link to="/">ACCUEIL</Link>
+      <Link to="/produits">PRODUITS</Link>
+      <Link to="/contact">CONTACT</Link>
+    </nav>
+  );
 }
