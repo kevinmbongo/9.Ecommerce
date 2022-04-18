@@ -10,6 +10,13 @@ export default function cartReducer(state = INITIAL_STATE, action) {
       );
 
       if (indexItemAdd !== -1) {
+        const updatedQuantity = {
+          ...state.cart[indexItemAdd],
+          quantity: state.cart[indexItemAdd].quantity + action.payload.quantity,
+        };
+        const newArr = [...state.cart];
+        newArr.splice(indexItemAdd, 1, updatedQuantity);
+        console.log(newArr);
       } else {
         const newArr = [...state.cart];
         newArr.push(action.payload);
