@@ -1,6 +1,13 @@
 import { createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 import carteReducer from "./reducer/cartReducer";
 
-const store = createStore(carteReducer);
+export default function configureStore(preloadedState) {
+  const store = createStore(
+    carteReducer,
+    preloadedState,
+    composeWithDevTools()
+  );
 
-export default store;
+  return store;
+}

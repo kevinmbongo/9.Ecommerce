@@ -14,20 +14,31 @@ export default function cartReducer(state = INITIAL_STATE, action) {
           ...state.cart[indexItemAdd],
           quantity: state.cart[indexItemAdd].quantity + action.payload.quantity,
         };
+
         const newArr = [...state.cart];
+
         newArr.splice(indexItemAdd, 1, updatedQuantity);
-        console.log(newArr);
+
+        return {
+          cart: newArr,
+        };
       } else {
         const newArr = [...state.cart];
+
         newArr.push(action.payload);
-        console.log(newArr);
+
         return {
           cart: newArr,
         };
       }
 
+    /*
     case "UPDATEITEM":
       return {};
+      */
     default:
+      console.error(`"${action.type}" is not a valid action type`);
   }
+
+  return state;
 }

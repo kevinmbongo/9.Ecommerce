@@ -33,7 +33,7 @@ export default function ProductShowcase() {
       type: "ADDITEM",
       payload: itemAdded,
     });
-    addingInfo.current.innerText = "Ajouetr au panier";
+    addingInfo.current.innerText = "Ajouter au panier";
     if (display) {
       display = false;
       timerInfo = setTimeout(() => {
@@ -42,11 +42,13 @@ export default function ProductShowcase() {
       }, 500);
     }
   };
+
   useEffect(() => {
     return () => {
       clearTimeout(timerInfo);
     };
   }, []);
+
   return (
     <div className="showcase">
       <div className="container-img-showcase">
@@ -70,7 +72,7 @@ export default function ProductShowcase() {
             value={nbMugs}
             onChange={updateMugs}
           />
-          <button>Ajouetr au panier</button>
+          <button>Ajouter au panier</button>
           <span ref={addingInfo} className="adding-info"></span>
         </form>
       </div>
