@@ -8,6 +8,7 @@ export default function ProductShowcase() {
   const [nbMugs, setNbMugs] = useState(1);
 
   const { id } = useParams();
+
   const productClicked = inventory.findIndex(
     (obj) => obj.title.replace(/\s/g, "").trim() === id
   );
@@ -15,6 +16,7 @@ export default function ProductShowcase() {
   const updateMugs = (e) => {
     setNbMugs(Number(e.target.value));
   };
+
   const addingInfo = useRef();
   let timerInfo;
   let display = true;
@@ -33,7 +35,9 @@ export default function ProductShowcase() {
       type: "ADDITEM",
       payload: itemAdded,
     });
+
     addingInfo.current.innerText = "Ajouter au panier";
+    
     if (display) {
       display = false;
       timerInfo = setTimeout(() => {

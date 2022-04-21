@@ -32,12 +32,20 @@ export default function cartReducer(state = INITIAL_STATE, action) {
         };
       }
 
-    /*
     case "UPDATEITEM":
-      return {};
-      */
-    default:
-      console.error(`"${action.type}" is not a valid action type`);
+      const indexItemUpdate = state.cart.findIndex(
+        (obj) => obj.id === action.payload.id
+      );
+
+      const newArr = [...state.cart];
+
+      newArr.splice(indexItemUpdate, 1, action.payload);
+      return {
+        cart: newArr,
+      };
+
+    // default:
+    //   console.error(`"${action.type}" is not a valid action type`);
   }
 
   return state;
