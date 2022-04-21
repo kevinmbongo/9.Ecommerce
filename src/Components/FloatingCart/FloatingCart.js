@@ -16,7 +16,7 @@ const FloatingCart = () => {
   }, [cart]);
 
   return (
-    <Link to="shoppingCart">
+    <Link to="/shoppingCart">
       <div className="floating-cart">
         <p>Votre Panier</p>
         <div className="img-notif-container">
